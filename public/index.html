@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bug Hunt Bookstore</title>
+  <title>Shadow Ops Bookstore</title>
   <style>
     body { font-family: system-ui, sans-serif; max-width: 760px; margin: 2rem auto; padding: 0 1rem; color: #1f2937; }
-    h1 { font-size: 1.5rem; }
+    h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+    .brief { margin: 0 0 1rem; padding: 0.5rem 0.75rem; background: #111827; color: #d1fae5; font-family: ui-monospace, monospace; font-size: 0.85rem; border-radius: 6px; }
     .controls { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem; }
     input[type=search], select { padding: 0.4rem; font: inherit; }
     table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; }
@@ -24,7 +25,8 @@
   </style>
 </head>
 <body>
-  <h1>Bug Hunt Bookstore</h1>
+  <h1>The Bookstore</h1>
+  <p class="brief">[SHADOW OPS] Breach detected. 5 bugs planted by the attackers. Find them, fix them, report to HQ.</p>
 
   <div class="controls">
     <input type="search" id="q" placeholder="Search titles" />

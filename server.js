@@ -1,14 +1,10 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const { Pool } = require('pg');
+const { pool, ready } = require('./lib/db');
 const { paginate } = require('./lib/paginate');
 
 const app = express();
-const pool = new Pool({
-  connectionString:
-    process.env.DATABASE_URL || 'postgres://postgres:postgres@db:5432/bookstore',
-});
 
 app.use(express.json({ limit: '10kb' }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -130,4 +126,6 @@ app.post('/api/hint', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Bookstore running on http://localhost:${PORT}`));
+ready.then(() => {
+  app.listen(PORT, () => console.log(`Bookstore running on http://localhost:${PORT}`));
+});
